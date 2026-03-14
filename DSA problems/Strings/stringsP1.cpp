@@ -1,16 +1,30 @@
+//valid palindrome 
 #include <iostream>
 #include <vector>
 #include <string>
 using  namespace std;
+
+
+
 int  main (){
-    string s ="daabcbaabcbc";
-    string part ="abc";
-while(s.find(part) != string::npos){
-    int st=s.find(part);
-   string out= s.erase(st , part.length());}
-cout<<s;
-return 0;
-   
+    string str = "raceCarzgdgz";
+    int st=0 , end = str.length()-1;
+    while(st<=end){
+        if(!isalnum(str[st])){
+            st ++ ;continue;
+        }
+        if(!isalnum(str[end])){
+            end--; continue;
+        }
+        if(tolower(str[st]) != tolower(str[end])) {
+            cout<<"not palindrome";
+            break;
+        }
+        st++; end--;
+        
+    }
+
+    return 0;
 }
 
 
